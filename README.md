@@ -5,10 +5,12 @@ QuickHire is a modern job board application built with the MERN stack.
 ## Installation & Setup
 
 ### 1. Prerequisites
+
 - Node.js installed
-- MongoDB Atlas account (for remote database)
+- MongoDB
 
 ### 2. Backend Setup
+
 1. Navigate to the `server` directory:
    ```bash
    cd server
@@ -28,6 +30,7 @@ QuickHire is a modern job board application built with the MERN stack.
    ```
 
 ### 3. Frontend Setup
+
 1. Navigate to the `client` directory:
    ```bash
    cd client
@@ -36,14 +39,12 @@ QuickHire is a modern job board application built with the MERN stack.
    ```bash
    npm install
    ```
-3. Start the development server:
+3. Update the API Client base URL for local development:
+   Open `client/src/api/apiClient.js` and ensure the `baseURL` points to your local server instead of production:
+   ```javascript
+   baseURL: "http://localhost:5000/api",
+   ```
+4. Start the development server:
    ```bash
    npm run dev
    ```
-
-### 4. Database Seeding (Optional)
-To populate the database with initial job listings:
-```bash
-cd server
-node seed.js
-```
