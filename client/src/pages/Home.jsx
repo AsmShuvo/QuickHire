@@ -80,9 +80,14 @@ const Home = () => {
             alt="Google"
             className="h-8"
           />
-          <img
+          {/* <img
             src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-Tesla.svg"
             alt="Tesla"
+            className="h-8"
+          /> */}
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+            alt="Amazon"
             className="h-8"
           />
           <img
@@ -189,7 +194,9 @@ const Home = () => {
                   <div className="flex justify-between items-start mb-6">
                     <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center border border-gray-50 shadow-sm">
                       <img
-                        src={job.logo || "https://via.placeholder.com/100"}
+                        src={
+                          job.logo || "https://i.ibb.co.com/Dgk3T1rq/image.png"
+                        }
                         alt={job.company}
                         className="w-10 h-10 object-contain"
                       />
@@ -253,11 +260,11 @@ const Home = () => {
                 transition={{ delay: idx * 0.05 }}
                 className="flex items-center gap-6 p-8 border border-gray-100 rounded-[32px] hover:shadow-xl hover:shadow-blue-50/50 transition-all group bg-white cursor-pointer"
               >
-                <div className="w-16 h-16 bg-[#F8FAFF] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-white transition-colors border border-transparent group-hover:border-gray-50 uppercase font-bold text-[#3B49DF]">
+                <div className="w-16 h-16 bg-[#F8FAFF]  flex items-center justify-center flex-shrink-0 group-hover:bg-white transition-colors border border-transparent group-hover:border-gray-50 uppercase font-bold text-[#3B49DF]">
                   <img
-                    src={"https://via.placeholder.com/100"}
+                    src={"https://i.ibb.co.com/Dgk3T1rq/image.png"}
                     alt={job.company}
-                    className="w-10 h-10 object-contain"
+                    className="w-10 h-10 object-contain rounded-4xl"
                   />
                 </div>
                 <div className="flex-1">
