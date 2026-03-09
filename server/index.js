@@ -17,6 +17,9 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to QuickHire Server" });
 });
 
+app.use('/api/jobs', require('./routes/jobRoutes'));
+app.use('/api/applications', require('./routes/applicationRoutes'));
+
 // Database Connection
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/quickhire")
