@@ -5,10 +5,15 @@ const Footer = () => {
   return (
     <footer className="bg-[#0D0D0D] text-white pt-24 pb-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-20">
           <div>
             <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 bg-[#3B49DF] rounded-lg"></div>
+              <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" fill="#3B49DF"/>
+                <circle cx="48" cy="46" r="22" fill="white"/>
+                <path d="M 34 70 Q 50 85 66 70" stroke="white" stroke-width="7" stroke-linecap="round" fill="none"/>
+                <path d="M 68 34 L 76 24" stroke="white" stroke-width="7" stroke-linecap="round"/>
+              </svg>
               <span className="text-2xl font-bold tracking-tight">QuickHire</span>
             </div>
             <p className="text-gray-400 font-medium leading-relaxed max-w-xs">
@@ -16,25 +21,27 @@ const Footer = () => {
             </p>
           </div>
           
-          <div>
-            <h4 className="text-xl font-bold mb-8">About</h4>
-            <ul className="space-y-4 font-medium text-gray-400">
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Companies</a></li>
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Terms</a></li>
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Advice</a></li>
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Privacy Policy</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-xl font-bold mb-8">Resources</h4>
-            <ul className="space-y-4 font-medium text-gray-400">
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Help Docs</a></li>
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Guide</a></li>
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Updates</a></li>
-              <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Contact Us</a></li>
-            </ul>
+          <div className="grid grid-cols-2 gap-8 lg:col-span-2">
+            <div>
+              <h4 className="text-xl font-bold mb-8">About</h4>
+              <ul className="space-y-4 font-medium text-gray-400">
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Companies</a></li>
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Pricing</a></li>
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Advice</a></li>
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Privacy Policy</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-xl font-bold mb-8">Resources</h4>
+              <ul className="space-y-4 font-medium text-gray-400">
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Help Docs</a></li>
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Guide</a></li>
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Updates</a></li>
+                <li><a href="#" className="hover:text-[#3B49DF] transition-colors">Contact Us</a></li>
+              </ul>
+            </div>
           </div>
           
           <div>

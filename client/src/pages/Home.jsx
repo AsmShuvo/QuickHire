@@ -172,7 +172,7 @@ const Home = () => {
             ) : null}
 
             <div
-              className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-opacity duration-300 ${loading ? "opacity-20" : "opacity-100"}`}
+              className={`flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory gap-4 md:grid-cols-2 lg:grid-cols-4 md:gap-6 pb-4 md:pb-0 transition-opacity duration-300 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ${loading ? "opacity-20" : "opacity-100"}`}
             >
               {jobs.slice(0, 8).map((job, idx) => (
                 <motion.div
@@ -182,7 +182,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   onClick={() => navigate(`/jobs/${job._id}`)}
-                  className="bg-white border border-gray-100 p-6 rounded-[24px] hover:shadow-xl hover:shadow-blue-50 transition-all flex flex-col h-full group cursor-pointer"
+                  className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 flex-shrink-0 snap-center bg-white border border-gray-100 p-6 rounded-[24px] hover:shadow-xl hover:shadow-blue-50 transition-all flex flex-col h-full group cursor-pointer"
                 >
                   <div className="flex justify-between items-start mb-6">
                     <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center border border-gray-50 shadow-sm">
@@ -199,14 +199,14 @@ const Home = () => {
                     </span>
                   </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-[#0D0D0D] mb-1 group-hover:text-[#3B49DF] transition-colors leading-tight">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl font-bold text-[#0D0D0D] mb-1 group-hover:text-[#3B49DF] transition-colors leading-tight truncate">
                       {job.title}
                     </h3>
-                    <p className="text-gray-400 text-sm font-medium mb-4">
+                    <p className="text-gray-400 text-sm font-medium mb-4 truncate">
                       {job.company} • {job.location}
                     </p>
-                    <p className="text-gray-500 text-sm line-clamp-2 mb-6 leading-relaxed">
+                    <p className="hidden lg:-webkit-box text-gray-500 text-sm line-clamp-2 mb-6 leading-relaxed break-words">
                       {job.description}
                     </p>
                   </div>
@@ -240,7 +240,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
             {jobs.slice(0, 8).map((job, idx) => (
               <motion.div
                 key={job._id}
@@ -248,37 +248,35 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="flex items-center gap-6 p-8 border border-gray-100 rounded-[32px] hover:shadow-xl hover:shadow-blue-50/50 transition-all group bg-white cursor-pointer"
+                onClick={() => navigate(`/jobs/${job._id}`)}
+                className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 p-6 md:p-8 border border-gray-100 rounded-[24px] md:rounded-[32px] hover:shadow-xl hover:shadow-blue-50/50 transition-all group bg-white cursor-pointer"
               >
-                <div className="w-16 h-16 bg-[#F8FAFF]  flex items-center justify-center flex-shrink-0 group-hover:bg-white transition-colors border border-transparent group-hover:border-gray-50 uppercase font-bold text-[#3B49DF]">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-[#F8FAFF] flex items-center justify-center flex-shrink-0 group-hover:bg-white transition-colors border border-transparent group-hover:border-gray-50 uppercase font-bold text-[#3B49DF] rounded-xl">
                   <img
                     src={"https://i.ibb.co.com/Dgk3T1rq/image.png"}
                     alt={job.company}
-                    className="w-10 h-10 object-contain rounded-4xl"
+                    className="w-8 h-8 md:w-10 h-10 object-contain rounded-full"
                   />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#0D0D0D] mb-1 group-hover:text-[#3B49DF] transition-colors">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#0D0D0D] mb-1 group-hover:text-[#3B49DF] transition-colors truncate">
                     {job.title}
                   </h3>
-                  <p className="text-gray-400 font-medium mb-4">
+                  <p className="text-gray-400 font-medium mb-3 md:mb-4 text-sm md:text-base truncate">
                     {job.company} • {job.location}
                   </p>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <span className="bg-[#E8F5E9] text-[#4CAF50] px-3 py-1 rounded-full text-[10px] font-extrabold uppercase">
                       {job.type}
                     </span>
-                    <span className="bg-[#FFF3E0] text-[#FF9800] px-3 py-1 rounded-full text-[10px] font-extrabold uppercase">
+                    <span className="bg-transparent border border-[#FF9800] text-[#FF9800] px-3 py-1 rounded-full text-[10px] font-extrabold uppercase">
                       Marketing
+                    </span>
+                    <span className="bg-transparent border border-[#3B49DF] text-[#3B49DF] px-3 py-1 rounded-full text-[10px] font-extrabold uppercase">
+                      Design
                     </span>
                   </div>
                 </div>
-                <Link
-                  to={`/jobs/${job._id}`}
-                  className="bg-[#3B49DF] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#2F3BB1] transition-all shadow-md shadow-blue-100"
-                >
-                  Apply
-                </Link>
               </motion.div>
             ))}
           </div>
