@@ -39,10 +39,9 @@ QuickHire is a modern job board application built with the MERN stack.
    ```bash
    npm install
    ```
-3. Update the API Client base URL for local development:
-   Open `client/src/api/apiClient.js` and ensure the `baseURL` points to your local server instead of production:
-   ```javascript
-   baseURL: "http://localhost:5000/api",
+3. Create a `.env` file in the `client` directory and configure the API base URL:
+   ```env
+   VITE_API_URL=http://localhost:5000/api
    ```
 4. Start the development server:
    ```bash
