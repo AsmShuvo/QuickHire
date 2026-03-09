@@ -11,7 +11,7 @@ const Navbar = () => {
             <span className="text-2xl font-bold text-[#0D0D0D] tracking-tight">QuickHire</span>
           </Link>
           <div className="hidden md:flex gap-8">
-            <Link to="/" className="text-gray-500 hover:text-[#3B49DF] font-semibold transition-colors">Find Jobs</Link>
+            <Link to="/jobs" className="text-gray-500 hover:text-[#3B49DF] font-semibold transition-colors">Find Jobs</Link>
             <Link to="/browse" className="text-gray-500 hover:text-[#3B49DF] font-semibold transition-colors">Browse Companies</Link>
           </div>
         </div>

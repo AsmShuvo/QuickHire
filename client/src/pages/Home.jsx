@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   FaPalette,
@@ -17,6 +17,7 @@ import CategorySection from "../components/CategorySection";
 import apiClient from "../api/apiClient";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({
@@ -180,6 +181,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
+                  onClick={() => navigate(`/jobs/${job._id}`)}
                   className="bg-white border border-gray-100 p-6 rounded-[24px] hover:shadow-xl hover:shadow-blue-50 transition-all flex flex-col h-full group cursor-pointer"
                 >
                   <div className="flex justify-between items-start mb-6">
