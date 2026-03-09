@@ -9,7 +9,6 @@ const Hero = ({ onSearch }) => {
 
   const handleSearchClick = async () => {
     setIsSearching(true);
-    // Artificial 1.5s delay to be VERY visible
     await new Promise(resolve => setTimeout(resolve, 1500));
     onSearch({ search: searchTerm, location });
     setIsSearching(false);
@@ -19,7 +18,6 @@ const Hero = ({ onSearch }) => {
     <section className="bg-white pt-16 pb-24">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-          {/* Text Content */}
           <div className="lg:w-1/2">
             <h1 className="text-6xl lg:text-7xl font-extrabold text-[#0D0D0D] leading-[1.1] mb-6">
               Discover <br />
@@ -33,7 +31,6 @@ const Hero = ({ onSearch }) => {
               Great platform for the job seeker that searching for new career heights and passionate about startups.
             </p>
 
-            {/* Search Bar */}
             <div className="bg-white p-2 rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col md:flex-row items-center gap-2 max-w-3xl">
               <div className="flex items-center gap-3 px-4 py-3 flex-1 w-full md:border-r border-gray-100">
                 <Search className="text-[#3B49DF]" size={22} />
@@ -81,7 +78,6 @@ const Hero = ({ onSearch }) => {
             </p>
           </div>
           
-          {/* Hero Image */}
           <div className="lg:w-1/2 relative flex justify-center lg:justify-end">
              <div className="relative z-10 w-full max-w-lg">
                 <img 

@@ -12,7 +12,7 @@ const ApplicationForm = ({ jobTitle, jobId, onClose }) => {
     resume_link: '',
     cover_note: ''
   });
-  const [status, setStatus] = useState('idle'); // idle, loading, success, error
+  const [status, setStatus] = useState('idle');
 
   const handleSubmit = async (e) => {
     e.preventDefault();

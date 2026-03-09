@@ -80,11 +80,6 @@ const Home = () => {
             alt="Google"
             className="h-8"
           />
-          {/* <img
-            src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-Tesla.svg"
-            alt="Tesla"
-            className="h-8"
-          /> */}
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
             alt="Amazon"
@@ -111,7 +106,6 @@ const Home = () => {
         />
       </motion.div>
 
-      {/* Blue CTA Banner in middle as per Figma */}
       <motion.section
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -119,7 +113,6 @@ const Home = () => {
         className="container mx-auto px-6 py-16"
       >
         <div className="bg-[#3B49DF] rounded-[48px] p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group">
-          {/* Animated Background Decoration */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-700"></div>
 
           <div className="md:w-1/2 text-white relative z-10">
@@ -150,7 +143,6 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Featured Jobs */}
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
@@ -190,7 +182,6 @@ const Home = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="bg-white border border-gray-100 p-6 rounded-[24px] hover:shadow-xl hover:shadow-blue-50 transition-all flex flex-col h-full group cursor-pointer"
                 >
-                  {/* Top Row: Logo and Type */}
                   <div className="flex justify-between items-start mb-6">
                     <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center border border-gray-50 shadow-sm">
                       <img
@@ -206,7 +197,6 @@ const Home = () => {
                     </span>
                   </div>
 
-                  {/* Content */}
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-[#0D0D0D] mb-1 group-hover:text-[#3B49DF] transition-colors leading-tight">
                       {job.title}
@@ -219,7 +209,6 @@ const Home = () => {
                     </p>
                   </div>
 
-                  {/* Bottom: Tags */}
                   <div className="flex flex-wrap gap-2 mt-auto">
                     <span className="bg-[#FFF8ED] text-[#FFB347] px-4 py-1.5 rounded-full text-xs font-bold">
                       {job.category || "Marketing"}
@@ -235,7 +224,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Latest Jobs - List layout like Figma */}
       <section className="py-24 bg-white border-t border-gray-50">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-16">

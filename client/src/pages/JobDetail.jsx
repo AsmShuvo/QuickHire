@@ -68,7 +68,6 @@ const JobDetail = () => {
         </Link>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Main Content */}
           <div className="lg:w-2/3">
             <div className="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 mb-10">
               <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mb-12">
@@ -165,7 +164,6 @@ const JobDetail = () => {
             </div>
           </div>
 
-          {/* Sidebar */}
           <div className="lg:w-1/3">
             <div className="bg-[#3B49DF] p-10 rounded-[40px] text-white sticky top-10 shadow-xl shadow-blue-100">
               <h3 className="text-2xl font-bold mb-8">About Company</h3>

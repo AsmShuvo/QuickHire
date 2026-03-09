@@ -177,7 +177,6 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Add Job Modal - Redesigned for clean look */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-6 overflow-y-auto">
           <div className="bg-white rounded-[50px] w-full max-w-2xl overflow-hidden my-auto shadow-2xl">

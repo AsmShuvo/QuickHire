@@ -212,9 +212,7 @@ const dummyJobs = [
 
 const seedDB = async () => {
   try {
-    await mongoose.connect(
-      process.env.MONGODB_URI || "mongodb://localhost:27017/quickhire",
-    );
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log("Connected to MongoDB for seeding...");
 
     await Job.deleteMany({});
