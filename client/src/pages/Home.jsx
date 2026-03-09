@@ -152,12 +152,15 @@ const Home = () => {
             <h2 className="text-5xl font-extrabold text-[#0D0D0D]">
               Featured <span className="text-[#3B49DF]">jobs</span>
             </h2>
-            <div className="hidden md:flex items-center gap-2 text-[#3B49DF] font-bold group cursor-pointer">
+            <Link
+              to="/jobs"
+              className="hidden md:flex items-center gap-2 text-[#3B49DF] font-bold group cursor-pointer"
+            >
               Show all jobs{" "}
               <span className="text-2xl transition-transform group-hover:translate-x-1">
                 →
               </span>
-            </div>
+            </Link>
           </div>
 
           <div className="relative min-h-[400px]">
@@ -167,14 +170,11 @@ const Home = () => {
                   <div className="absolute inset-0 border-4 border-gray-100 rounded-full"></div>
                   <div className="absolute inset-0 border-4 border-[#3B49DF] border-t-transparent rounded-full animate-spin"></div>
                 </div>
-                <p className="text-[#3B49DF] font-extrabold text-xl animate-pulse">
-                  Searching for best roles...
-                </p>
               </div>
             ) : null}
 
             <div
-              className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300 ${loading ? "opacity-20" : "opacity-100"}`}
+              className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-opacity duration-300 ${loading ? "opacity-20" : "opacity-100"}`}
             >
               {jobs.slice(0, 8).map((job, idx) => (
                 <motion.div
@@ -183,8 +183,44 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
+                  className="bg-white border border-gray-100 p-6 rounded-[24px] hover:shadow-xl hover:shadow-blue-50 transition-all flex flex-col h-full group cursor-pointer"
                 >
-                  <JobCard job={job} />
+                  {/* Top Row: Logo and Type */}
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center border border-gray-50 shadow-sm">
+                      <img
+                        src={job.logo || "https://via.placeholder.com/100"}
+                        alt={job.company}
+                        className="w-10 h-10 object-contain"
+                      />
+                    </div>
+                    <span className="text-[#3B49DF] bg-[#F0F2FF] px-4 py-1.5 rounded-lg text-xs font-bold border border-[#E0E4FF]">
+                      {job.type || "Full Time"}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0D0D0D] mb-1 group-hover:text-[#3B49DF] transition-colors leading-tight">
+                      {job.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm font-medium mb-4">
+                      {job.company} • {job.location}
+                    </p>
+                    <p className="text-gray-500 text-sm line-clamp-2 mb-6 leading-relaxed">
+                      {job.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom: Tags */}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    <span className="bg-[#FFF8ED] text-[#FFB347] px-4 py-1.5 rounded-full text-xs font-bold">
+                      {job.category || "Marketing"}
+                    </span>
+                    <span className="bg-[#F0FFF9] text-[#2ECC71] px-4 py-1.5 rounded-full text-xs font-bold">
+                      Design
+                    </span>
+                  </div>
                 </motion.div>
               ))}
             </div>
